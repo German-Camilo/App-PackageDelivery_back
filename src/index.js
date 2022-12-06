@@ -11,7 +11,7 @@ const appRoute = require('./routes/appRoutes')
 mongoose
   .connect(process.env.MONGO_DB_URI)
   .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(`Connected to Mongo! Database name: "${x.connection.host}"`)
   })
   .catch((err) => {
     console.error('Error connecting to mongo', err.reason)
