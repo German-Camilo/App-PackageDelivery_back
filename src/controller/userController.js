@@ -5,10 +5,10 @@ const userController = {};
 // Model
 let userSchema = require('../models/userModel');
 
-// READ Students
+// READ Users
 userController.allUsers = function(req, res) {
     
-    // res.send("HOLA MUNDO")
+    // Service GET users
     userSchema.find((error, data) => {
         if (error) {
             return next(error)
@@ -17,6 +17,31 @@ userController.allUsers = function(req, res) {
             res.json(data)
         }
     })
+}
+
+// CREATE User
+userController.saveUser = function(req, res) {
+    const data = req.body;
+    console.log(data);
+
+    // Service POST User
+    userSchema.insertMany(data, error => {
+        if (error) {
+            return next(error)
+        } else {
+            console.log(data);
+            res.json(data);
+        }
+    })
+}
+
+// UPDATE User
+userController.updateUser = function(req, res) {
+    const data = req.body;
+    console.log(data);
+
+    // Service UPDATE User
+    
 }
 
 module.exports = userController;

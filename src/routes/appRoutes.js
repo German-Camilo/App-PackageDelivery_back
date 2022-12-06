@@ -18,6 +18,9 @@ router.route('/create').post((req, res, next) => {
   })
 });
 
+// Create User
+router.post('/saveUser', userController.saveUser);
+
 // READ Users
 router.post('/allUsers', userController.allUsers);
 

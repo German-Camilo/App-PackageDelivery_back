@@ -2,31 +2,71 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let orderSchema = new Schema({
-    name: {
+    shipmentDate: {
+        type: Date,
+        required: true,
+    },
+    shipmentTime: {
         type: String,
         required: true,
     },
-    lastName: {
+    deliveryStatus: {
         type: String,
         required: true,
     },
-    age: {
+    length: {
         type: Number,
         min: 100,
         required: true,
     },
+    width: {
+        type: Number,
+        min: 100,
+        required: true,
+    },
+    high: {
+        type: Number,
+        min: 100,
+        required: true,
+    },
+    weight: {
+        type: Number,
+        min: 100,
+        required: true,
+    },
+    pickupCity: {
+        type: String,
+        required: true,
+    },
+    pickupAdress: {
+        type: String,
+        required: true,
+    },
     orderDate: {
-        type: Date
+        type: Date,
+        required: true,
     },
-    country: {
+    recipientName: {
         type: String,
         required: true,
     },
-    adress: {
+    recipientTypeDocument: {
+        type: Number,
+        required: true,
+    },
+    recipientDocument: {
         type: String,
         required: true,
     },
-    orderId: {
+    deliveryCity: {
+        type: String,
+        required: true,
+    },
+    deliveryAdress: {
+        type: String,
+        required: true,
+    },
+    shipmentId: {
         type: Schema.Types.ObjectId, ref: 'Order'
     }
 },{

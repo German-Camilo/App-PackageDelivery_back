@@ -6,7 +6,7 @@ let userSchema = new Schema({
         type: String,
         required: true,
     },
-    name: {
+    firstName: {
         type: String,
         required: true,
     },
@@ -14,19 +14,22 @@ let userSchema = new Schema({
         type: String,
         required: true,
     },
-    age: {
+    documentType: {
+        type: String,
+        required: true,
+    },
+    document: {
         type: Number,
-        min: 100,
         required: true,
     },
     birthDate: {
         type: Date
     },
-    country: {
+    email: {
         type: String,
         required: true,
     },
-    adress: {
+    city: {
         type: String,
         required: true,
     },
